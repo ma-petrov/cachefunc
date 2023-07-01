@@ -20,7 +20,7 @@ LOGGING_CONFIG = {
     'loggers': {
         'root': {
             'handlers': ['default'],
-            'level': 'INFO',
+            'level': 'WARN',
         }
     }
 }
