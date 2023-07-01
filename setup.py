@@ -14,7 +14,9 @@ setup(
     long_description_content_type='text/markdown',
     install_requires=['redis'],
     test_requires=[],
-    url='https://github.com/ma-petrov/cachedfunc',
+    project_urls = {
+        'Github': 'https://github.com/ma-petrov/cachefunc',
+    },
     packages=find_packages(),
     classifiers=[
         'Programming Language :: Python :: 3',
