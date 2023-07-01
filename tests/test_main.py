@@ -1,37 +1,37 @@
 from unittest.mock import MagicMock, call
-from cachedfunc.main import cachedfunc, default_cache
+from cachefunc.main import cachefunc, default_cache
 
 
 RESULT = 'some data'
 OTHER_RESULT = 'other result'
 
 
-@cachedfunc()
+@cachefunc()
 def target_func(testcall: MagicMock) -> str:
     testcall('target func was called')
     return RESULT
 
 
-@cachedfunc()
+@cachefunc()
 def other_target_func(testcall: MagicMock) -> str:
     testcall('other target func was called')
     return OTHER_RESULT
 
 
 class A:
-    @cachedfunc()
+    @cachefunc()
     def target_func(self, testcall: MagicMock) -> str:
         testcall('method of A was called')
         return RESULT
 
 class B:
-    @cachedfunc()
+    @cachefunc()
     def target_func(self, testcall: MagicMock) -> str:
         testcall('method of B was called')
         return OTHER_RESULT
     
 
-def test_cachedfunc__no_data_in_cache():
+def test_cachefunc__no_data_in_cache():
     default_cache.clear()
     testcall = MagicMock()
 
@@ -40,7 +40,7 @@ def test_cachedfunc__no_data_in_cache():
     assert result == RESULT
 
 
-def test_cachedfunc__fetch_data_from_cache():
+def test_cachefunc__fetch_data_from_cache():
     default_cache.clear()
     testcall = MagicMock()
 
@@ -50,7 +50,7 @@ def test_cachedfunc__fetch_data_from_cache():
     assert result == RESULT
     
 
-def test_cachedfunc__unique_key():
+def test_cachefunc__unique_key():
     default_cache.clear()
     testcall = MagicMock()
 
@@ -64,7 +64,7 @@ def test_cachedfunc__unique_key():
     assert other_result == OTHER_RESULT
     
 
-def test_cachedfunc__unique_key_class_method():
+def test_cachefunc__unique_key_class_method():
     default_cache.clear()
     testcall = MagicMock()
 

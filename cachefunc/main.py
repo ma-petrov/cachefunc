@@ -52,7 +52,7 @@ def _get_key(func: Union[Callable, Coroutine]) -> str:
     return func.__qualname__
 
 
-def cachedfunc(
+def cachefunc(
     cache: BaseCache = default_cache,
     timeout: timedelta = DEFAULT_TIMEOUT,
 ) -> Callable:
@@ -70,7 +70,7 @@ def cachedfunc(
     return decorator
 
 
-def cachedcoro(
+def cachecoro(
     cache: BaseCache = default_cache,
     timeout: timedelta = DEFAULT_TIMEOUT,
 ) -> Callable:
