@@ -1,5 +1,4 @@
 from contextlib import suppress
-from datetime import timedelta
 from functools import wraps
 from typing import Any, Callable, Coroutine
 
