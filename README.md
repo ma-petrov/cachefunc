@@ -5,7 +5,8 @@ Caching functions and coroutines result with decorators
 # Usage
 
 Basic usage with default dict cache:
-```
+
+```python
 import aiohttp
 import asyncio
 import requests
@@ -25,7 +26,8 @@ async def your_async_func(url):
 ```
 
 There are two available caches - dict and redis:
-```
+
+```python
 from cachefunc import cachefunc, DictCache, RedisCache
 
 dict_cache = DictCache()
@@ -43,7 +45,8 @@ def your_func_cached_in_redis(url):
 ```
 
 For DictCache it is possible to setup distinct timeout for each function:
-```
+
+```python
 from datetime import timedelta
 
 @cachefunc(dict_cache, timeout=timedelta(hours=2))
@@ -59,7 +62,8 @@ def your_ohter_func_cached_for_ten_minutes(connection, query):
 
 Also custom cache can be created from BaseCache, you should implement
 methods _get() and _set():
-```
+
+```python
 from cachefunc import BaseCache
 
 class CustomCache(BaseCache):
