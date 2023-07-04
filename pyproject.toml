@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "cachefunc"
-version = "0.2.5"
+version = "0.2.6"
 description = "Caching functions and coroutines result with decorators"
 authors = ["Petrov Mikhail <petrov.ma@icloud.com>"]
 license = "MIT"
